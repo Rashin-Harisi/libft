@@ -3,47 +3,59 @@
 #include <stdlib.h>
 #include <limits.h>
 
+char	*ft_itoa(int n)
+{
+	unsigned int	count;
+	int		signe;
+	char		*ptr;
+	unsigned int	index;
+	unsigned int	dividend;
 
-char *ft_itoa(int n){
-    unsigned int count = 0;
-    int signe = 1;
-    char *ptr;
-    unsigned int index = 0;
+	count = 0;
+	signe = 1;
+	index = 0;
+	if (n == 0)
+	{
+		count++;
+		ptr = malloc((count + 1) * sizeof(char));
+		ptr[index] = '0';
+		ptr[count] = '\0';
+		return (ptr);
+	}
+	if (n < 0)
+	{
+		count++;
+		signe *= -1;
+	}
+	dividend = (n < 0) ? -n : n;
+	while (dividend != 0)
+	{
+		dividend = dividend / 10;
+		count++;
+	}
+	ptr = malloc((count + 1) * sizeof(char));
+	if (ptr != NULL)
+	{
+		if (signe < 0)
+		{
+			ptr[0] = '-';
+			index++;
+		}
+		ptr[count] = '\0';
+		count--;
+		dividend = (n < 0) ? -n : n;
+		while (dividend != 0)
+		{
+			ptr[count] = (dividend % 10) + '0';
+			dividend = dividend / 10 ;
+			count--;
+		}
+	}
+	else
+		return (NULL);
+	return (ptr);
+}
 
-    if(n == 0){
-        count++;
-        ptr = malloc((count + 1) * sizeof(char));
-        ptr[index] = '0';
-        ptr[count] = '\0';
-        return ptr;
-    }
-    if(n < 0 ){ 
-        count++;
-        signe *= -1;
-    };
-    unsigned int dividend = (n < 0) ? -n : n;
-    while(dividend != 0){
-        dividend = dividend /10;
-        count++;
-    }
-    ptr = malloc((count + 1) * sizeof(char));
-    if(ptr != NULL){
-        
-        if(signe < 0) {
-            ptr[0] = '-';
-            index++;
-        }
-        ptr[count] = '\0';
-        count--;
-        dividend = (n < 0) ? -n : n;
-        while(dividend != 0 ){
-            ptr[count] = (dividend % 10) + '0';
-            dividend  = dividend /10 ;
-            count--;
-        }
-    }else return NULL;
-    return ptr;
-};
 /*
 int main(){
     int test = -2147483648;

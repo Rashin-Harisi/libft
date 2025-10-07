@@ -1,12 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rabdolho <rabdolho@student.42vienna.c      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/25 09:49:50 by rabdolho          #+#    #+#             */
+/*   Updated: 2025/07/25 10:23:22 by rabdolho         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "libft.h"
 #include <stdio.h>
 #include <stdlib.h>
-
-
-//int atoi(const char *nptr);
-//long atol(const char *nptr);
-//long long atoll(const char *nptr);//
-
 
 int	ft_atoi(const char *str)
 {
@@ -19,7 +24,8 @@ int	ft_atoi(const char *str)
 	sign = 1;
 	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13) || str[i] == '+')
 		i++;
-	if (str[i] == '-'){
+	if (str[i] == '-')
+	{
 		sign = sign * -1;
 		i++;
 	}

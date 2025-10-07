@@ -1,32 +1,40 @@
 #include <stdlib.h>
 #include "libft.h"
 #include <stdio.h>
-//you can use malloc to develope this function. 
 
-void *ft_calloc(size_t nmemb, size_t size){
-    void *ptr;
-    if(size == 0 || nmemb == 0){
-        ptr = malloc(1);
-        if(ptr != NULL){
-            char unsigned *p = (unsigned char*)ptr;
-            p[0] = 0;
-        }
-        return ptr;
-        
-    }
-    unsigned int total_memory = nmemb * size;
-    ptr = malloc(total_memory);
-    if(ptr == NULL) printf("The allocation memory is failed.");
-    else{
-        unsigned int index = 0;
-        char unsigned *p = (unsigned char*)ptr;
-        while(index < total_memory){
-            p[index] = 0;
-            index++;
-        }
-    }
-    return ptr;
-};
+void	*ft_calloc(size_t nmemb, size_t size)
+{
+	void		*ptr;
+	char unsigned	*p;
+	unsigned int	total_memory;
+	unsigned int	index;
+
+	if (size == 0 || nmemb == 0)
+	{
+		ptr = malloc(1);
+		if (ptr != NULL)
+		{
+			p = (unsigned char *)ptr;
+			p[0] = 0;
+		}
+		return (ptr);
+	}
+	total_memory = nmemb * size;
+	ptr = malloc(total_memory);
+	if (ptr == NULL)
+		printf("The allocation memory is failed.");
+	else
+	{
+		index = 0;
+		p = (unsigned char *)ptr;
+		while (index < total_memory)
+		{
+			p[index] = 0;
+			index++;
+		}
+	}
+	return (ptr);
+}
 
 /*
 int main(){

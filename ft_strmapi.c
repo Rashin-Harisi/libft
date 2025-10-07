@@ -2,22 +2,28 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+{
+	unsigned int	index;
+	unsigned int	length;
+	char		*ptr;
 
-char *ft_strmapi(char const *s, char (*f)(unsigned int, char)){
-    unsigned int  index = 0;
-    unsigned int length = ft_strlen(s);
-    char *ptr; 
-    ptr = malloc((length + 1) * sizeof(char));
-    if(ptr != NULL){
-        while(s[index] != '\0'){
-            ptr[index]=f(index,s[index]);
-            index++;
-        }
-        ptr[index]= '\0';
-    }
-    else return NULL;
-    return ptr;
-};
+	index = 0;
+	length = ft_strlen(s);
+	ptr = malloc((length + 1) * sizeof(char));
+	if (ptr != NULL)
+	{
+		while (s[index] != '\0')
+		{
+			ptr[index] = f(index, s[index]);
+			index++;
+		}
+		ptr[index] = '\0';
+	}
+	else
+		return (NULL);
+	return (ptr);
+}
 
 /*
 char ft_upper(unsigned int index, char c){

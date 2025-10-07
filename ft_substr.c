@@ -2,38 +2,44 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+{
+	void		*ptr;
+	unsigned char	*p;
+	unsigned int	index_s;
+	unsigned int	index_p;
+	unsigned int	s_len;
 
-char *ft_substr(char const *s, unsigned int start,size_t len){
-    void *ptr;
-    //unsigned char *ptr_s = (unsigned char *)s; 
-    unsigned int index_s = start;
-    unsigned int index_p = 0;
-    unsigned int s_len = ft_strlen(s);
+	index_s = start;
+	index_p = 0;
+	s_len = ft_strlen(s);
+	if (start + len > s_len || len == 0)
+	{
+		ptr = malloc(1);
+		if (ptr != NULL)
+		{
+			p = (unsigned char *) ptr;
+			p[0] = '\0';
+			return (ptr);
+		}
+	}
+	ptr = malloc((len + 1) * sizeof(char));
+	if (ptr != NULL)
+	{
+		p = (unsigned char *) ptr;
+		while (index_p < len)
+		{
+			p[index_p] = s[index_s];
+			index_p++;
+			index_s++;
+		}
+		p[index_p] = '\0';
+	}
+	else
+		return (NULL);
+	return (ptr);
+}
 
-
-    if(start + len > s_len || len == 0){
-        ptr = malloc(1);
-        if(ptr != NULL){
-            unsigned char *p = (unsigned char*)ptr;
-            p[0] = '\0';
-            return ptr; 
-        }
-    };
-
-    ptr = malloc((len + 1 )* sizeof(char));
-    if( ptr != NULL){
-        unsigned char *p = (unsigned char*)ptr;
-        while(index_p < len){
-            p[index_p] = s[index_s];
-            index_p++;
-            index_s++;
-        }
-        p[index_p] = '\0';
-    }else
-        return NULL;
-
-    return ptr;
-};
 /*
 int main(){
     char test[] = "Welcom to my website";

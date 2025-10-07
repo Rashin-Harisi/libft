@@ -1,13 +1,18 @@
 #include "libft.h"
 #include <stdio.h>
 
-void ft_striteri(char *s, void (*f)(unsigned int,char*)){
-    unsigned int index = 0;
-    while(s[index] != '\0'){
-        f(index, &s[index]);
-        index ++;
-    }
-};
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+{
+	unsigned int	index;
+
+	index = 0;
+	while (s[index] != '\0')
+	{
+		f(index, &s[index]);
+		index ++;
+	}
+}
+
 /*
 void ft_upper(unsigned int index, char *c){
     (void)index;

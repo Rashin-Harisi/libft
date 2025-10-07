@@ -3,22 +3,28 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+char	*ft_strdup(const char *s)
+{
+	unsigned int	length;
+	void		*ptr;
+	unsigned int	index;
+	unsigned char	*p;
 
-char *ft_strdup(const char *s){
-    unsigned int length = ft_strlen(s);
-    void *ptr;
-    unsigned int index = 0; 
-    ptr = malloc((length + 1) * sizeof(char));
-    if(ptr != NULL){
-        unsigned char *p = (unsigned char*)ptr;
-        while(s[index] != '\0'){
-            p[index] = s[index];
-            index++;
-        }
-        p[index] = '\0';
-    }
-    return ptr;
-};
+	length = ft_strlen(s);
+	index = 0;
+	ptr = malloc((length + 1) * sizeof(char));
+	if (ptr != NULL)
+	{
+		p = (unsigned char *) ptr;
+		while (s[index] != '\0')
+		{
+			p[index] = s[index];
+			index++;
+		}
+		p[index] = '\0';
+	}
+	return (ptr);
+}
 
 /*
 int main(){{
@@ -26,8 +32,8 @@ int main(){{
 
     char *new_memo = ft_strdup(test);
     char *new_memo2 = strdup(test);
-    printf("the new memory's content with my function is:  %s\n", new_memo );
-    printf("the new memory's content with origin function is:  %s\n", new_memo2 );
+    printf(" my function is:  %s\n", new_memo );
+    printf("the origin function is:  %s\n", new_memo2 );
 
     free(new_memo);
     free(new_memo2);

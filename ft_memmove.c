@@ -3,25 +3,35 @@
 #include <string.h>
 #include "libft.h"
 
-void *ft_memmove(void *dest, const void *src, size_t n){
-    char unsigned *p_dest = (unsigned char *)dest;
-    char unsigned *p_src = (unsigned char *)src;
-    if(p_dest < p_src){
-        size_t i= 0;
-        while(i < n){
-            p_dest[i] = p_src[i];
-            i++;
-        }
-    }
-    if(p_dest > p_src){
-        size_t i= n;
-        while(i>0){
-            p_dest[i-1] = p_src[i-1];
-            i--;
-        }
-    }
-    return dest;
-};
+void	*ft_memmove(void *dest, const void *src, size_t n)
+{
+	char unsigned	*p_dest;
+	char unsigned	*p_src;
+	size_t		i;
+
+	p_dest = (unsigned char *)dest;
+	p_src = (unsigned char *)src;
+	if (p_dest < p_src)
+	{
+		i = 0;
+		while (i < n)
+		{
+			p_dest[i] = p_src[i];
+			i++;
+		}
+	}
+	if (p_dest > p_src)
+	{
+		i = n;
+		while (i > 0)
+		{
+			p_dest[i - 1] = p_src[i - 1];
+			i--;
+		}
+	}
+	return (dest);
+}
+
 /*
 int main(){
     char str1[]= "123456789";

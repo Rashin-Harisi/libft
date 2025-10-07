@@ -1,14 +1,20 @@
 #include <unistd.h>
 
-void ft_putendl_fd(char *s, int fd){
-    unsigned int index = 0;
-    char new_line= '\n';
-    while(s[index] != '\0'){
-        write(fd,&s[index],1);
-        index++;
-    }
-    write(fd,&new_line, 1);
-};
+void	ft_putendl_fd(char *s, int fd)
+{
+	unsigned int	index;
+	char		new_line;
+
+	new_line = '\n';
+	index = 0;
+	while (s[index] != '\0')
+	{
+		write(fd, &s[index], 1);
+		index++;
+	}
+	write(fd, &new_line, 1);
+}
+
 /*
 int main(){
     char test[] = "Hello world";

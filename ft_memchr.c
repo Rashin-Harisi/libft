@@ -2,24 +2,31 @@
 #include <stdio.h>
 #include <string.h>
 
-void *ft_memchr(const void *s, int c, size_t n){
-    unsigned int i = 0;
-    unsigned char *p_s = (unsigned char *)s;
-    int flag = 0;
-    unsigned char *ptr; 
-    while (i < n)
-    {
-        if(p_s[i] == c ){
-            ptr = &p_s[i];
-            flag = 1;
-            break;
-        }
-        i++;
-    }
-    if(flag == 1) return ptr;
-    else return NULL;
+void	*ft_memchr(const void *s, int c, size_t n)
+{
+	unsigned int	i;
+	unsigned char	*p_s;
+	int		flag;
+	unsigned char	*ptr;
 
-};
+	i = 0;
+	p_s = (unsigned char *)s;
+	flag = 0;
+	while (i < n)
+	{
+		if (p_s[i] == c)
+		{
+			ptr = &p_s[i];
+			flag = 1;
+			break ;
+		}
+		i++;
+	}
+	if (flag == 1)
+		return (ptr);
+	else
+		return (NULL);
+}
 
 /*
 int main(){

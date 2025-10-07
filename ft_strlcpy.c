@@ -2,19 +2,26 @@
 #include <stdio.h>
 #include "libft.h"
 
+unsigned int	ft_strlcpy(char *dest, const char *src, unsigned int size)
+{
+	unsigned int	i;
+	unsigned int	j;
 
-unsigned int ft_strlcpy(char *dest, const char *src, unsigned int size){
-    unsigned int i = 0;
-    unsigned int j = 0;
-    while(src[i] != '\0') i++;
-    if(size == 0) return i;
-    while(src[j] && j < size -1){
-        dest[j] = src[j];
-        j++;
-    }
-    dest[j] = '\0';
-    return i;
-};
+	i = 0;
+	j = 0;
+	while (src[i] != '\0')
+		i++;
+	if (size == 0)
+		return (i);
+	while (src[j] && j < size - 1)
+	{
+		dest[j] = src[j];
+		j++;
+	}
+	dest[j] = '\0';
+	return (i);
+}
+
 /*
 int main(){
     int result;

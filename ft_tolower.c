@@ -2,13 +2,14 @@
 #include <ctype.h>
 #include "libft.h"
 
-int ft_tolower(int c)
+int	ft_tolower(int c)
 {
-    if (c > 64 && c < 91)
-		return c + 32;
+	if (c > 64 && c < 91)
+		return (c + 32);
 	else
-		return c;
+		return (c);
 }
+
 /*
 int main()
 {
