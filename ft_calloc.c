@@ -1,37 +1,30 @@
 #include <stdlib.h>
 #include "libft.h"
-#include <stdio.h>
+//#include <stdio.h>
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void		*ptr;
-	char unsigned	*p;
 	unsigned int	total_memory;
 	unsigned int	index;
 
 	if (size == 0 || nmemb == 0)
 	{
 		ptr = malloc(1);
-		if (ptr != NULL)
-		{
-			p = (unsigned char *)ptr;
-			p[0] = 0;
-		}
+		if (ptr == NULL)
+			return (NULL);
+		((unsigned char *)ptr)[0] = 0;
 		return (ptr);
 	}
 	total_memory = nmemb * size;
 	ptr = malloc(total_memory);
 	if (ptr == NULL)
-		printf("The allocation memory is failed.");
-	else
+		return (NULL);
+	index = 0;
+	while (index < total_memory)
 	{
-		index = 0;
-		p = (unsigned char *)ptr;
-		while (index < total_memory)
-		{
-			p[index] = 0;
-			index++;
-		}
+		((unsigned char *)ptr)[index] = 0;
+		index++;
 	}
 	return (ptr);
 }
