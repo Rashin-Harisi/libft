@@ -4,19 +4,17 @@
 
 int	ft_isdigit(int c)
 {
-	if (c >= 0 && c <= 9)
+	if (c >= 48 && c <= 57)
 		return (1);
 	else
 		return (0);
 }
-/*
-int main (int argc, char *argv[]) {
 
-    int result;
-    if(argc < 2) printf("There is not enough input.");
-    //result = ft_isdigit(*argv[1]);
-    result = isdigit(*argv[1]);
-    if(result != 0) printf("The charcter is digit");
-    else printf("The character is not digit");
+/*
+int main () {
+
+    int result = 60;
+    printf("result of origin function: %d\n",isdigit(result));
+    printf("result of my function : %d\n",ft_isdigit(result));   
     return 0;
 }*/

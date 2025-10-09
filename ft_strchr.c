@@ -22,7 +22,7 @@ char	*ft_strchr(const char *s, int c)
 	}
 	if (c == '\0' && flag == 0)
 		return ((char *)&s[index]);
-	if (lag == 1)
+	if (flag == 1)
 		return (ptr);
 	else
 		return (NULL);

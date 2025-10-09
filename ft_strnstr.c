@@ -2,42 +2,29 @@
 #include <stdio.h>
 #include <string.h>
 
-//strnstr(const char *big, const char *little, size_t len);
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	unsigned char *p_haystack = (unsigned char *)haystack;
-	unsigned char *p_needle = (unsigned char *)needle;
-	unsigned int len_needle  = ft_strlen(needle);
-	unsigned int index_haystack = 0;
-	unsigned int index_needle = 0;
-	unsigned int first_index;
-	
-	if (len_needle == 0)
-		return ((char *)p_haystack);
-	while (index_haystack < len && p_haystack[index_haystack] != '\0')
+	unsigned int	index_big;
+	int		index_little;
+	unsigned int	first_index;
+
+	index_big = 0;
+	if (ft_strlen(little) == 0)
+		return ((char *)big);
+	while (index_big < len && big[index_big] != '\0')
 	{
-		if (p_haystack[index_haystack] != p_needle[index_needle]
-			&& p_haystack[index_haystack] !='\0')
-			index_haystack++;
-		else
+		index_little = 0;
+		first_index = index_big;
+		while (big[index_big] == little[index_little]
+			&& little[index_little] != '\0' && index_big < len)
 		{
-			first_index = index_haystack;
-			index_haystack++;
-			index_needle++;
-			while (p_haystack[index_haystack] == p_needle[index_needle]
-				&& p_needle[index_needle] != '\0' && index_haystack < len)
-			{
-				index_haystack++;
-				index_needle++;
-			}
-			if (index_needle == len_needle)
-				return  ((char *)&p_haystack[first_index]);
-			else
-			{
-				index_needle = 0;
-				index_haystack = first_index + 1;
-			}
+			index_big++;
+			index_little++;
 		}
+		if (index_little == ft_strlen(little))
+			return ((char *)&big[first_index]);
+		else
+			index_big++;
 	}
 	return (NULL);
 }
@@ -45,9 +32,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 /*
 int main(){
     char haystack[] = "Welcome to Rashin Website";
-    char needle[] = "Rashin";
+    char needle[] = "shin";
     //printf("the origin function result : %s\n", strnstr(haystack,needle,22));
     printf("My function result : %s\n", ft_strnstr(haystack,needle,17));
     return 0;
-}
-*/
+}*/

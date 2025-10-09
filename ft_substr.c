@@ -5,38 +5,27 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	void		*ptr;
-	unsigned char	*p;
-	unsigned int	index_s;
 	unsigned int	index_p;
-	unsigned int	s_len;
 
-	index_s = start;
 	index_p = 0;
-	s_len = ft_strlen(s);
-	if (start + len > s_len || len == 0)
+	if (((int)start + (int)len) > ft_strlen(s) || len == 0)
 	{
 		ptr = malloc(1);
-		if (ptr != NULL)
-		{
-			p = (unsigned char *) ptr;
-			p[0] = '\0';
-			return (ptr);
-		}
+		if (ptr == NULL)
+			return (NULL);
+		((unsigned char *)ptr)[0] = '\0';
+		return (ptr);
 	}
 	ptr = malloc((len + 1) * sizeof(char));
-	if (ptr != NULL)
-	{
-		p = (unsigned char *) ptr;
-		while (index_p < len)
-		{
-			p[index_p] = s[index_s];
-			index_p++;
-			index_s++;
-		}
-		p[index_p] = '\0';
-	}
-	else
+	if (ptr == NULL)
 		return (NULL);
+	while (index_p < len)
+	{
+		((unsigned char *)ptr)[index_p] = s[start];
+		index_p++;
+		start++;
+	}
+	((unsigned char *)ptr)[index_p] = '\0';
 	return (ptr);
 }
 
