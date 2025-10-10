@@ -5,12 +5,12 @@
 char	*ft_strrchr(const char *s, int c)
 {
 	int		flag;
-	unsigned int	index;
+	int		index;
 	char		*ptr;
 
 	flag = 0;
 	index = ft_strlen(s);
-	while (index > 0)
+	while (index >= 0)
 	{
 		if (s[index] == c)
 		{
@@ -18,12 +18,10 @@ char	*ft_strrchr(const char *s, int c)
 			ptr = (char *)&s[index];
 			break ;
 		}
-		if (index == 0)
-			break ;
 		index--;
 	}
-	if (c == '\0' && flag == 0)
-		return ((char *)&s[ft_strlen(s)]);
+	if (flag == 0 && index == 0)
+		return (NULL);
 	if (flag == 1)
 		return (ptr);
 	else
@@ -32,9 +30,10 @@ char	*ft_strrchr(const char *s, int c)
 
 /*
 int main(){
-    char test[20] = "Hello world";
-    printf("Origin function: %s\n", strrchr(test, 'b'));
-    printf("My function:  %s\n", ft_strrchr(test, 'b'));
+    char test[100] = "Hello world and welcome to my website";
+    printf("Origin function: %s\n", strrchr(test, 'o'));
+    printf("My function:  %s\n", ft_strrchr(test, 'o'));
 
     return 0;
-}*/
+}
+*/

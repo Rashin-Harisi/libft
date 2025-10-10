@@ -1,5 +1,5 @@
 #include "libft.h"
-//#include <stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
 
 int	count_substring_handler(char const *s, char c)
@@ -33,12 +33,12 @@ int	len_substring_handler(char const *s, char c, unsigned int *index)
 	return (len);
 }
 
-void	*free_handler(char **ptr)
+void	*free_handler(char **ptr, unsigned int *i_ptr)
 {
 	unsigned int	index;
 
 	index = 0;
-	while (*ptr[index] != '\0')
+	while (index < *i_ptr)
 	{
 		free(ptr[index]);
 		index++;
@@ -61,7 +61,7 @@ void	copy_handler(char **ptr, unsigned int *i_ptr, unsigned int *index
 	{
 		ptr[*i_ptr] = malloc((len + 1) * sizeof(char));
 		if (ptr[*i_ptr] == NULL)
-			free_handler(ptr);
+			free_handler(ptr, i_ptr);
 		while (i < len)
 		{
 			ptr[*i_ptr][i] = s[i_start + i];

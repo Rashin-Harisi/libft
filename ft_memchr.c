@@ -1,7 +1,7 @@
 #include "libft.h"
 #include <stdio.h>
 #include <string.h>
-
+#include <unistd.h>
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	unsigned int	i;
@@ -30,14 +30,17 @@ void	*ft_memchr(const void *s, int c, size_t n)
 
 /*
 int main(){
-    char test[] = "welcome to my world";
-    char *ptr1 = memchr(&test[6],'d',5);
-    char *ptr2 = ft_memchr(&test[6], 'd', 5);
-    if(ptr1 != NULL) printf("origin function : %s\n", ptr1);
-    else printf("nothing match!\n");
-
-    if(ptr2 != NULL) printf("my function : %s\n", ptr2);
-    else printf("nothing match!\n");
+    char test[] = "bonjour";
+    char *ptr1 = memchr(test,'o',7);
+    char *ptr2 = ft_memchr(test, 'o', 7);
+    write(1,test,strlen(ptr1));
+    printf("\n");
+    //printf("origin function : %ld\n", strlen(ptr1));
+    //else printf("nothing match!\n");
+    write(1,test,strlen(ptr2));
+    printf("\n");
+    //printf("my function : %ld\n", strlen(ptr2));
+    //else printf("nothing match!\n");
 
     return 0;
 }*/

@@ -13,6 +13,23 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+int	check_handler(const char *str, int *i, int *sign)
+{
+	if (!(str[*i + 1] >= '0' && str[*i + 1] <= '9'))
+		return (0);
+	else
+	{
+		if (str[*i] == '+')
+			(*i)++;
+		if (str[*i] == '-')
+		{
+			*sign = *sign * -1;
+			(*i)++;
+		}
+	}
+	return (*sign);
+}
+
 int	ft_atoi(const char *str)
 {
 	int	i;
@@ -22,13 +39,10 @@ int	ft_atoi(const char *str)
 	result = 0;
 	i = 0;
 	sign = 1;
-	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13) || str[i] == '+')
+	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
 		i++;
-	if (str[i] == '-')
-	{
-		sign = sign * -1;
-		i++;
-	}
+	if (str[i] == '+' || str[i] == '-')
+		check_handler(str, &i, &sign);
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		result = result * 10 + (str[i] - '0');
@@ -40,7 +54,7 @@ int	ft_atoi(const char *str)
 /*
 int main(void)
 {
-    char str[] = "   +1234abc";
+    char str[] = "   -12457abc";
     printf("the origin function : %d\n", atoi(str));
     printf("my function : %d\n", ft_atoi(str));
     return 0;
