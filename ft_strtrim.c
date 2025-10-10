@@ -50,7 +50,7 @@ int	index_end_handler(char const *s1, char const *set)
 	return (index);
 }
 
-void	copy_handler(char const *s1, unsigned int *start,
+void	copy_trim_handler(char const *s1, unsigned int *start,
 		unsigned int *end, void *ptr)
 {
 	unsigned int	p_index;
@@ -86,7 +86,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	ptr = malloc((end - start + 2) * sizeof(char));
 	if (ptr == NULL)
 		return (NULL);
-	copy_handler(s1, &start, &end, ptr);
+	copy_trim_handler(s1, &start, &end, ptr);
 	return (ptr);
 }
 

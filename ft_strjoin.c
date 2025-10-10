@@ -3,7 +3,7 @@
 //#include <stdio.h>
 #include <stdlib.h>
 
-void	copy_handler(char const *s, unsigned int *index_p, void *ptr)
+void	copy_join_handler(char const *s, unsigned int *index_p, void *ptr)
 {
 	unsigned int	index;
 
@@ -27,8 +27,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	ptr = malloc((length + 1) * sizeof(char));
 	if (ptr == NULL)
 		return (NULL);
-	copy_handler(s1, &index_p, ptr);
-	copy_handler(s2, &index_p, ptr);
+	copy_join_handler(s1, &index_p, ptr);
+	copy_join_handler(s2, &index_p, ptr);
 	((unsigned char *)ptr)[index_p] = '\0';
 	return (ptr);
 }
