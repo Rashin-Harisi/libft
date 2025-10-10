@@ -1,5 +1,6 @@
 #include <unistd.h>
 #include "libft.h"
+#include <stdlib.h>
 
 void	ft_putnbr_fd(int n, int fd)
 {
@@ -7,12 +8,15 @@ void	ft_putnbr_fd(int n, int fd)
 	unsigned int	index;
 
 	converted = ft_itoa(n);
+	if (!converted)
+		return;
 	index = 0;
 	while (converted[index] != '\0')
 	{
 		write(fd, &converted[index], 1);
 		index++;
 	}
+	free(converted);
 }
 
 /*
