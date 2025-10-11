@@ -88,7 +88,6 @@ char	**ft_split(char const *s, char c)
 		while (s[index] == c)
 			index++;
 		copy_handler(ptr, &i_ptr, &index, s, c);
-		index++;
 	}
 	ptr[i_ptr] = NULL;
 	return (ptr);

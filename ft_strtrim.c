@@ -43,11 +43,10 @@ int	index_end_handler(char const *s1, char const *set)
 				flag = 1;
 			set_i++;
 		}
-		if (flag == 0)
+		if (flag == 0 || index == 0)
 			return (index);
 		index--;
 	}
-	return (index);
 }
 
 void	copy_trim_handler(char const *s1, unsigned int *start,

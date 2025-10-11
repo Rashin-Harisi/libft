@@ -8,13 +8,12 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	size_t	index;
 
 	index = 0;
-	while (index < n && s1[index] != '\0' && s2[index] != '\0')
-	{
-		while (s1[index] == s2[index])
+	if (n == 0)
+		return (0);
+	while (index < n && s1[index] != '\0' && s2[index] != '\0'
+			&& (s1[index] == s2[index]))
 			index++;
-		return (s1[index] - (s2[index]);
-	}
-	return (0);
+	return (s1[index] - (s2[index]);
 }
 
 /*

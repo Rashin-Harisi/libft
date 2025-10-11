@@ -1,28 +1,30 @@
 #include <unistd.h>
 #include "libft.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char		*converted;
-	unsigned int	index;
-
-	converted = ft_itoa(n);
-	if (!converted)
-		return;
-	index = 0;
-	while (converted[index] != '\0')
+	long int	nbr;
+	char		nbr_chr;
+	
+	nbr = (long)n;
+	if (n < 0)
 	{
-		write(fd, &converted[index], 1);
-		index++;
+		ft_putchar_fd('-', fd);
+		nbr = (long)n * -1;
 	}
-	free(converted);
+	if (nbr > 9)
+		ft_putnbr_fd(nbr / 10 , fd);
+	nbr_chr = (nbr % 10 ) + '0';
+	write(fd, &nbr_chr, 1);
 }
 
 /*
 int main(){
-    int n = 452;
+    int n = -2147483648;
     //write(1,&n,3);
     ft_putnbr_fd(n,1);
+    printf("\n");
     return 0;
 }*/
