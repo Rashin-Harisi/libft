@@ -6,19 +6,12 @@
 /*   By: rabdolho <rabdolho@student.42vienna.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 09:41:45 by rabdolho          #+#    #+#             */
-/*   Updated: 2025/10/13 12:28:00 by rabdolho         ###   ########.fr       */
+/*   Updated: 2025/10/13 14:41:16 by rabdolho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 //#include <stdio.h>
 #include <stdlib.h>
-
-typedef struct s_split
-{
-	char            **ptr;
-	unsigned int    index;
-	unsigned int    i_ptr;
-}
 
 int	count_substring_handler(char const *s, char c)
 {
@@ -38,74 +31,80 @@ int	count_substring_handler(char const *s, char c)
 	return (count);
 }
 
-int	len_substring_handler(char const *s, char c, t_split *data)
+int	len_substring_handler(char const *s, char c, unsigned int *index)
 {
 	unsigned int	len;
 
 	len = 0;
-	while (s[data->index] != c && s[data->index] != '\0')
+	while (s[*index] != c && s[*index] != '\0')
 	{
-		data->index++;
+		(*index)++;
 		len++;
 	}
 	return (len);
 }
 
-void	*free_handler(t_split *data)
+void	*free_handler(char **ptr, unsigned int *i_ptr)
 {
 	unsigned int	index;
 
 	index = 0;
-	while (index < data->i_ptr)
+	while (index < *i_ptr)
 	{
-		free(data->ptr[index]);
+		free(ptr[index]);
 		index++;
 	}
-	free(data->ptr);
+	free(ptr);
 	return (NULL);
 }
 
-void	copy_handler(t_split *data, char const *s, char c)
+char	*copy_handler( unsigned int *index, char const *s, char c)
 {
-	unsigned int	i;
 	unsigned int	i_start;
+	unsigned int	i;
+	char			*word;
 	unsigned int	len;
 
 	i = 0;
-	i_start = data->index;
-	len = len_substring_handler(s, c, data);
+	i_start = *index;
+	len = len_substring_handler(s, c, index);
+	word = malloc((len + 1) * sizeof(char));
+	if (!word)
+		return (NULL);
 	if (len > 0)
 	{
-		data->ptr[data->i_ptr] = malloc(len + 1 * sizeof(char));
-		if (data->ptr[data->i_ptr] == NULL)
-			free_handler(data);
 		while (i < len)
 		{
-			data->ptr[data->i_ptr][i] = s[i_start + i];
+			word[i] = s[i_start + i];
 			i++;
 		}
-		data->ptr[data->i_ptr][len] = '\0';
-		data->i_ptr++;
+		word[len] = '\0';
 	}
+	return (word);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	t_split data;
+	char			**ptr;
+	unsigned int	index;
+	unsigned int	i_ptr;
 
-	data.index = 0;
-	data.i_ptr = 0;
-	data.ptr = malloc ((count_substring_handler(s, c) + 1) * sizeof(char *));
-	if (data.ptr == NULL)
+	index = 0;
+	i_ptr = 0;
+	ptr = malloc ((count_substring_handler(s, c) + 1) * sizeof(char *));
+	if (ptr == NULL)
 		return (NULL);
-	while (s[data.index] != '\0')
+	while (s[index] != '\0')
 	{
-		while (s[data.index] == c)
-			data.index++;
-		copy_handler(&data, s, c);
+		while (s[index] == c)
+			index++;
+		ptr[i_ptr] = copy_handler(&index, s, c);
+		if (ptr[i_ptr] == NULL)
+			free_handler(ptr, &i_ptr);
+		i_ptr++;
 	}
-	data.ptr[data.i_ptr] = NULL;
-	return (data.ptr);
+	ptr[i_ptr] = NULL;
+	return (ptr);
 }
 
 /*
