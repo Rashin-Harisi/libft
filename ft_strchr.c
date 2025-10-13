@@ -6,7 +6,7 @@
 /*   By: rabdolho <rabdolho@student.42vienna.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 09:43:37 by rabdolho          #+#    #+#             */
-/*   Updated: 2025/10/13 09:44:09 by rabdolho         ###   ########.fr       */
+/*   Updated: 2025/10/13 15:52:27 by rabdolho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -23,7 +23,7 @@ char	*ft_strchr(const char *s, int c)
 	index = 0;
 	while (s[index] != '\0')
 	{
-		if (s[index] == c)
+		if (s[index] == (unsigned char)c)
 		{
 			flag = 1;
 			ptr = (char *)&s[index];
@@ -41,9 +41,9 @@ char	*ft_strchr(const char *s, int c)
 
 /*
 int main(){
-    char test[20] = "Hello world";
-    printf("Origin function:  %s\n", strchr(test, 'o'));
-    printf("My function: %s\n", ft_strchr(test, 'o'));
+    char test[] = "tripouille";
+    printf("Origin function:  %s\n", strchr(test, 't'+256));
+    printf("My function: %s\n", ft_strchr(test, 't'+256));
 
     return 0;
 }

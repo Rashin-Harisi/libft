@@ -6,12 +6,12 @@
 /*   By: rabdolho <rabdolho@student.42vienna.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 09:54:24 by rabdolho          #+#    #+#             */
-/*   Updated: 2025/10/13 09:55:04 by rabdolho         ###   ########.fr       */
+/*   Updated: 2025/10/13 16:24:14 by rabdolho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-//#include <stdio.h>
-//#include <string.h>
+#include <stdio.h>
+#include <string.h>
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
@@ -34,17 +34,16 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 		}
 		if (index_little == ft_strlen(little))
 			return ((char *)&big[first_index]);
-		else
-			index_big++;
+		index_big = first_index + 1;
 	}
 	return (NULL);
 }
 
 /*
 int main(){
-    char haystack[] = "Welcome to Rashin Website";
-    char needle[] = "shin";
+    char haystack[] = "aaabcabcd";
+    char needle[] = "abcd";
     //printf("the origin function result : %s\n", strnstr(haystack,needle,22));
-    printf("My function result : %s\n", ft_strnstr(haystack,needle,17));
+    printf("My function result : %s\n", ft_strnstr(haystack,needle,9));
     return 0;
 }*/
