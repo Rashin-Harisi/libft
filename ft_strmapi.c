@@ -1,12 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rabdolho <rabdolho@student.42vienna.c      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/13 09:49:15 by rabdolho          #+#    #+#             */
+/*   Updated: 2025/10/13 09:49:30 by rabdolho         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "libft.h"
 #include <stdlib.h>
-#include <stdio.h>
+//#include <stdio.h>
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	unsigned int	index;
 	unsigned int	length;
-	char		*ptr;
+	char			*ptr;
 
 	index = 0;
 	length = ft_strlen(s);

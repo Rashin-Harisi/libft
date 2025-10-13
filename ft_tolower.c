@@ -1,6 +1,17 @@
-#include <stdio.h>
-#include <ctype.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rabdolho <rabdolho@student.42vienna.c      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/13 09:58:08 by rabdolho          #+#    #+#             */
+/*   Updated: 2025/10/13 09:58:39 by rabdolho         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "libft.h"
+//#include <stdio.h>
+//#include <ctype.h>
 
 int	ft_tolower(int c)
 {

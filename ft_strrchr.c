@@ -1,11 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rabdolho <rabdolho@student.42vienna.c      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/13 09:55:30 by rabdolho          #+#    #+#             */
+/*   Updated: 2025/10/13 09:55:58 by rabdolho         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
+//#include <stdio.h>
+//#include <string.h>
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int		flag;
-	int		index;
+	int			flag;
+	int			index;
 	char		*ptr;
 
 	flag = 0;

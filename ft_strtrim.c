@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rabdolho <rabdolho@student.42vienna.c      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/13 09:56:14 by rabdolho          #+#    #+#             */
+/*   Updated: 2025/10/13 09:57:09 by rabdolho         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "libft.h"
 #include <stdlib.h>
 //#include <stdio.h>
@@ -5,7 +16,7 @@
 int	index_start_handler(char const *s1, char const *set)
 {
 	unsigned int	set_i;
-	int		flag;
+	int				flag;
 	unsigned int	index;
 
 	index = 0;
@@ -29,7 +40,7 @@ int	index_start_handler(char const *s1, char const *set)
 int	index_end_handler(char const *s1, char const *set)
 {
 	unsigned int	set_i;
-	int		flag;
+	int				flag;
 	unsigned int	index;
 
 	index = ft_strlen(s1) - 1;
@@ -68,7 +79,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 {
 	unsigned int	end;
 	unsigned int	start;
-	void		*ptr;
+	void			*ptr;
 
 	if (ft_strlen(s1) == 0)
 		return (ft_strdup(s1));

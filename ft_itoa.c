@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rabdolho <rabdolho@student.42vienna.c      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/13 09:25:53 by rabdolho          #+#    #+#             */
+/*   Updated: 2025/10/13 09:26:35 by rabdolho         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "libft.h"
 #include <stddef.h>
 #include <stdlib.h>
@@ -40,9 +51,9 @@ void	ptr_handler(char *ptr, unsigned int *dividend,
 
 char	*ft_itoa(int n)
 {
-	size_t		count;
-	int		signe;
-	char		*ptr;
+	size_t			count;
+	int				signe;
+	char			*ptr;
 	unsigned int	dividend;
 
 	count = 0;

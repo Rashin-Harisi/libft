@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rabdolho <rabdolho@student.42vienna.c      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/13 09:46:19 by rabdolho          #+#    #+#             */
+/*   Updated: 2025/10/13 09:46:37 by rabdolho         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "libft.h"
 #include <stddef.h>
 //#include <stdio.h>
@@ -19,7 +30,7 @@ void	copy_join_handler(char const *s, unsigned int *index_p, void *ptr)
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	unsigned int	length;
-	void		*ptr;
+	void			*ptr;
 	unsigned int	index_p;
 
 	index_p = 0;

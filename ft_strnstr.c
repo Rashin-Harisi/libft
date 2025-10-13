@@ -1,11 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rabdolho <rabdolho@student.42vienna.c      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/13 09:54:24 by rabdolho          #+#    #+#             */
+/*   Updated: 2025/10/13 09:55:04 by rabdolho         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
+//#include <stdio.h>
+//#include <string.h>
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	unsigned int	index_big;
-	int		index_little;
+	int				index_little;
 	unsigned int	first_index;
 
 	index_big = 0;

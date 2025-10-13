@@ -1,12 +1,23 @@
-#include <string.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rabdolho <rabdolho@student.42vienna.c      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/13 09:44:30 by rabdolho          #+#    #+#             */
+/*   Updated: 2025/10/13 09:45:14 by rabdolho         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "libft.h"
-#include <stdio.h>
+//#include <string.h>
+//#include <stdio.h>
 #include <stdlib.h>
 
 char	*ft_strdup(const char *s)
 {
 	unsigned int	length;
-	void		*ptr;
+	void			*ptr;
 	unsigned int	index;
 	unsigned char	*p;
 

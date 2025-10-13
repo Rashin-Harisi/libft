@@ -1,12 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rabdolho <rabdolho@student.42vienna.c      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/13 09:43:37 by rabdolho          #+#    #+#             */
+/*   Updated: 2025/10/13 09:44:09 by rabdolho         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
+//#include <stdio.h>
+//#include <string.h>
 
 char	*ft_strchr(const char *s, int c)
 {
-	int		flag;
+	int				flag;
 	unsigned int	index;
-	char		*ptr;
+	char			*ptr;
 
 	flag = 0;
 	index = 0;

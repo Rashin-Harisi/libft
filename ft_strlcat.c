@@ -1,6 +1,17 @@
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rabdolho <rabdolho@student.42vienna.c      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/13 09:46:58 by rabdolho          #+#    #+#             */
+/*   Updated: 2025/10/13 09:47:27 by rabdolho         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "libft.h"
-#include <string.h>
+//#include <stdio.h>
+//#include <string.h>
 /*
 the behavior if this function is : at the end it returns sum length of
 src and dest. but beside that concating action will take place,

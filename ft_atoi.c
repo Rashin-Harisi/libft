@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rabdolho <rabdolho@student.42vienna.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/25 09:49:50 by rabdolho          #+#    #+#             */
-/*   Updated: 2025/07/25 10:23:22 by rabdolho         ###   ########.fr       */
+/*   Created: 2025/10/13 09:15:36 by rabdolho          #+#    #+#             */
+/*   Updated: 2025/10/13 09:23:47 by rabdolho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-#include <stdio.h>
-#include <stdlib.h>
+//#include <stdio.h>
+//#include <stdlib.h>
 
 int	check_handler(const char *str, int *i, int *sign)
 {

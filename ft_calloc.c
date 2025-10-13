@@ -1,10 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rabdolho <rabdolho@student.42vienna.c      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/13 09:17:11 by rabdolho          #+#    #+#             */
+/*   Updated: 2025/10/13 09:17:25 by rabdolho         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include <stdlib.h>
 #include "libft.h"
 //#include <stdio.h>
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	void		*ptr;
+	void			*ptr;
 	unsigned int	total_memory;
 	unsigned int	index;
 

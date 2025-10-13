@@ -1,7 +1,18 @@
-#include <stdio.h>
-#include <ctype.h>
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rabdolho <rabdolho@student.42vienna.c      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/13 09:18:54 by rabdolho          #+#    #+#             */
+/*   Updated: 2025/10/13 09:20:50 by rabdolho         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "libft.h"
+//#include <stdio.h>
+//#include <ctype.h>
+//#include <stdlib.h>
 
 int	ft_isascii(int c)
 {

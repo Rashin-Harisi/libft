@@ -1,10 +1,21 @@
-#include <stdio.h>
-#include <string.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rabdolho <rabdolho@student.42vienna.c      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/13 09:36:02 by rabdolho          #+#    #+#             */
+/*   Updated: 2025/10/13 09:36:31 by rabdolho         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "libft.h"
+//#include <stdio.h>
+//#include <string.h>
 
 void	*ft_memset(void *str, int c, size_t n)
 {
-	size_t		i;
+	size_t			i;
 	unsigned char	*p;
 
 	i = 0;
