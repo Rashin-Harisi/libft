@@ -6,7 +6,7 @@
 /*   By: rabdolho <rabdolho@student.42vienna.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 09:41:45 by rabdolho          #+#    #+#             */
-/*   Updated: 2025/10/13 14:41:16 by rabdolho         ###   ########.fr       */
+/*   Updated: 2025/10/14 14:08:54 by rabdolho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -24,6 +24,8 @@ int	count_substring_handler(char const *s, char c)
 	{
 		while (s[index] == c)
 			index++;
+		if (s[index] == '\0')
+			break ;
 		count++;
 		while (s[index] != c && s[index] != '\0')
 			index++;
@@ -98,6 +100,8 @@ char	**ft_split(char const *s, char c)
 	{
 		while (s[index] == c)
 			index++;
+		if (s[index] == '\0')
+			break ;
 		ptr[i_ptr] = copy_handler(&index, s, c);
 		if (ptr[i_ptr] == NULL)
 			free_handler(ptr, &i_ptr);
@@ -110,8 +114,8 @@ char	**ft_split(char const *s, char c)
 /*
 int main()
 {
-	char test[]= ",,Hello,world,,rashin";
-	char **result = ft_split(test, ',');
+	char test[]= "     ";
+	char **result = ft_split(test, ' ');
     unsigned int i = 0;
     while(result[i] != NULL){
         printf("the index %d is %s.\n", i , result[i]);
